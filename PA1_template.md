@@ -69,7 +69,7 @@ contains the maximum number of steps?
         theme_minimal() +
         labs(x="5-minute interval", y="average steps")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-7-1.png?raw=true)
+![](RepData_PeerAssessment1/instructions_fig/PA1_template_files/figure-markdown_strict/unnamed-chunk-7-1.png?raw=true)
 
 ### Imputing missing values
 
@@ -101,7 +101,7 @@ and generated the corresponding histogram.
         labs(y="Frequency", x="Number of steps taken per day") +
         theme_minimal()
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-11-1.png?raw=true)
+![](RepData_PeerAssessment1/instructions_fig/PA1_template_files/figure-markdown_strict/unnamed-chunk-11-1.png?raw=true)
 
 We can compare the histograms by overlaying them:
 
@@ -160,7 +160,7 @@ And I compare the time series for the Weekend and Weekdays.
         theme(legend.title=element_blank()) +
         labs(x="5-minute interval", y="average steps")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-15-1.png?raw=true)
+![](RepData_PeerAssessment1/instructions_fig/PA1_template_files/figure-markdown_strict/unnamed-chunk-15-1.png?raw=true)
 
 It can be observed that there is less overall activity on the weekends.
 However, on the weekends there is more activity in the afternoon hours
