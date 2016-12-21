@@ -1,6 +1,6 @@
 ---
 title: "Reproducible Research - Week 2 - Peer-reviewed project"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, echo=FALSE}
@@ -17,7 +17,6 @@ I use them very frequently in my work.
 library(lubridate)
 library(dplyr)
 library(ggplot2)
-library(plotly)
 ```
 
 ### Read the data
@@ -50,12 +49,10 @@ print(dat_1)
 and create a histogram.
 
 ```{r}
-p <- ggplot(dat_1, aes(x=daily)) +
+ggplot(dat_1, aes(x=daily)) +
     geom_histogram(bins=7, color="dodgerblue4", fill="dodgerblue4", alpha = 0.7) +
     labs(y="Frequency", x="Number of steps taken per day") +
     theme_minimal()
-ggplotly(p) %>% config(displayModeBar = FALSE)
-
 ```
 
 ### What is the average daily activity pattern?
@@ -71,12 +68,10 @@ Which 5-minute interval, on average across all the days in the dataset, contains
 the maximum number of steps?
 
 ```{r}
-p <- ggplot(dat_2, aes(x=interval, y=steps)) +
+ggplot(dat_2, aes(x=interval, y=steps)) +
     geom_line(color="dodgerblue4", size=0.5) +
     theme_minimal() +
     labs(x="5-minute interval", y="average steps")
-ggplotly(p) %>% config(displayModeBar = FALSE) 
-
 ```
 
 ### Imputing missing values
@@ -108,12 +103,10 @@ dat_f_1 <- dat_f %>% group_by(date) %>% na.omit() %>% summarise(daily=sum(steps)
 and generated the corresponding histogram.
 
 ```{r}
-p <- ggplot(dat_f_1, aes(x=daily)) +
+ggplot(dat_f_1, aes(x=daily)) +
     geom_histogram(bins=7, color="dodgerblue4", fill="dodgerblue4", alpha = 0.7) +
     labs(y="Frequency", x="Number of steps taken per day") +
     theme_minimal()
-ggplotly(p) %>% config(displayModeBar = FALSE)
-
 ```
 
 We can compare the histograms by overlaying them:
@@ -125,11 +118,11 @@ dat_c_2 <- dat_f_1 %>% mutate(group = "With NA Filled")
 
 dat_comp <- rbind(dat_c_1, dat_c_2)
 
-p <- ggplot(dat_comp, aes(x=daily, color=group)) +
+ggplot(dat_comp, aes(x=daily, color=group)) +
     geom_histogram(bins=7, alpha=0.5, position="identity") +
     labs(y="Frequency", x="Number of steps taken per day") +
     theme_minimal()
-ggplotly(p) %>% config(displayModeBar = FALSE)
+
 ```
 
 Calculate and report the mean and median total number of steps taken per day.
@@ -163,12 +156,11 @@ dat_w <- dat %>% mutate(Week.Day = wday(date, label=TRUE)) %>%
 And I compare the time series for the Weekend and Weekdays.
 
 ```{r}
-p <- ggplot(dat_w, aes(interval, y=steps, color=Weekend)) +
+ggplot(dat_w, aes(interval, y=steps, color=Weekend)) +
     geom_line(size=0.5) +
     theme_minimal() +
     theme(legend.title=element_blank()) +
     labs(x="5-minute interval", y="average steps")
-ggplotly(p) %>% config(displayModeBar = FALSE) 
 ```
 
 It can be observed that there is less overall activity on the weekends. However,
