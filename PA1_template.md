@@ -7,8 +7,6 @@ with datasets. I use them very frequently in my work.
     library(dplyr)
     library(ggplot2)
 
-    ## Warning: package 'ggplot2' was built under R version 3.3.2
-
 ### Read the data
 
 I read the data using the base function read.csv specifying that the
@@ -53,7 +51,7 @@ and create a histogram.
         labs(y="Frequency", x="Number of steps taken per day") +
         theme_minimal()
 
-![](https://github.com/RolandoOS/RepData_PeerAssessment1/blob/master/RepData_PeerAssessment1/instructions_fig/PA1_template_files/figure-markdown_strict/unnamed-chunk-5-1.png?raw=true)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
 ### What is the average daily activity pattern?
 
@@ -69,7 +67,7 @@ contains the maximum number of steps?
         theme_minimal() +
         labs(x="5-minute interval", y="average steps")
 
-![](https://github.com/RolandoOS/RepData_PeerAssessment1/blob/master/RepData_PeerAssessment1/instructions_fig/PA1_template_files/figure-markdown_strict/unnamed-chunk-7-1.png?raw=true)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
 ### Imputing missing values
 
@@ -101,7 +99,7 @@ and generated the corresponding histogram.
         labs(y="Frequency", x="Number of steps taken per day") +
         theme_minimal()
 
-![](https://github.com/RolandoOS/RepData_PeerAssessment1/blob/master/RepData_PeerAssessment1/instructions_fig/PA1_template_files/figure-markdown_strict/unnamed-chunk-11-1.png?raw=true)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 We can compare the histograms by overlaying them:
 
@@ -160,7 +158,7 @@ And I compare the time series for the Weekend and Weekdays.
         theme(legend.title=element_blank()) +
         labs(x="5-minute interval", y="average steps")
 
-![](https://github.com/RolandoOS/RepData_PeerAssessment1/blob/master/RepData_PeerAssessment1/instructions_fig/PA1_template_files/figure-markdown_strict/unnamed-chunk-15-1.png?raw=true)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-15-1.png)
 
 It can be observed that there is less overall activity on the weekends.
 However, on the weekends there is more activity in the afternoon hours
